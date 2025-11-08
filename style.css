@@ -1,0 +1,302 @@
+/* ===== Google Font Import ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* ===== Global Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #071427, #0e1f33);
+  color: #ffffff;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ===== Navbar ===== */
+header {
+  width: 100%;
+  padding: 20px 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background: rgba(11, 26, 46, 0.8);
+  backdrop-filter: blur(6px);
+}
+
+#logo {
+  cursor: pointer;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #00aeef;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #b0bec5;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #00aeef;
+  text-shadow: 0 0 10px #00aeef;
+}
+
+/* ===== Navbar Link Hover Animation ===== */
+.nav-links li a {
+  text-decoration: none;
+  color: #b0bec5;
+  font-weight: 500;
+  transition: transform 0.25s ease, color 0.3s ease, text-shadow 0.3s ease;
+  display: inline-block;
+}
+
+.nav-links li a:hover {
+  color: #00aeef;
+  text-shadow: 0 0 10px #00aeef;
+  transform: scale(1.15);
+}
+
+nav ul li a.active {
+  color: #00aeef;
+  text-shadow: 0 0 10px #00aeef;
+}
+
+/* ===== Hero Section ===== */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 100vh;
+  padding: 0 10%;
+  gap: 40px;
+}
+
+.hero-content {
+  flex: 1;
+  max-width: 600px;
+  animation: fadeInUp 1.2s ease;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.hero-content .subtitle {
+  color: #00aeef;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 25px;
+}
+
+.cta-button {
+  display: inline-block;
+  background: #00aeef;
+  color: #ffffff;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.8s ease;
+  box-shadow: 0 0 10px rgba(0, 174, 239, 0.5);
+}
+
+.cta-button:hover {
+  background: transparent;
+  color: #00aeef;
+  border: 2px solid #00aeef;
+  box-shadow: 0 0 20px #00aeef;
+  transform: scale(1.1);
+  transition: transform 0.25s ease, box-shadow 0.3s ease, color 0.3s ease;
+}
+
+.cta-button:active {
+  transform: scale(0.98);
+}
+
+/* ===== Hero Image ===== */
+.hero-image {
+  flex: 1;
+  text-align: right;
+  position: relative;
+  z-index: 1000;
+}
+
+.hero-image img {
+  max-width: 400px;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0, 174, 239, 0.3);
+  transition: 0.8s ease;
+}
+
+.hero-image img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 35px rgba(0, 174, 239, 0.6);
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 30px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: #06172c;
+  color: #b0bec5;
+  font-size: 0.9rem;
+}
+
+.social-links a {
+  color: #00aeef;
+  margin: 0 10px;
+  text-decoration: none;
+  transition: 0.8s ease;
+}
+
+.social-links a:hover {
+  text-shadow: 0 0 10px #00aeef;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 992px) {
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding-top: 100px;
+  }
+
+  .hero-image img {
+    max-width: 320px;
+  }
+
+  header {
+    padding: 15px 40px;
+  }
+
+  .nav-links {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .cta-button {
+    padding: 10px 24px;
+  }
+
+  .nav-links {
+    display: none; /* optional for mobile simplicity */
+  }
+}
+
+/* ===== Simple Animation ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Page Load Animation ===== */
+body {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+body.page-loaded {
+  opacity: 1;
+}
+
+/* ===== Scroll Animation ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== Scroll To Top Button ===== */
+.scroll-top-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #00aeef;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(0, 174, 239, 0.6);
+  z-index: 99;
+}
+.scroll-top-btn.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ===== Mobile Navbar Toggle ===== */
+.nav-toggle {
+  display: none;
+  font-size: 28px;
+  color: #00aeef;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.nav-toggle.active {
+  color: #ffffff;
+}
+
+/* ===== Responsive Navbar (mobile) ===== */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 40px;
+    background: rgba(14, 31, 51, 0.95);
+    border-radius: 10px;
+    padding: 20px;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+}
