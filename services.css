@@ -1,0 +1,299 @@
+/* ===== Google Font ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* ===== Reset & Base ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #071427, #0e1f33);
+  color: #ffffff;
+  line-height: 1.7;
+  overflow-x: hidden;
+  padding-top: 100px;
+}
+
+/* ===== Header / Navbar (same as other pages) ===== */
+header {
+  width: 100%;
+  padding: 20px 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background: rgba(11, 26, 46, 0.8);
+  backdrop-filter: blur(6px);
+}
+
+#logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: linear-gradient(135deg, #00aeef, #0072ff);
+  padding: 8px 18px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 174, 239, 0.4);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+#logo:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 25px rgba(0, 174, 239, 0.7);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #b0bec5;
+  font-weight: 500;
+  transition: transform 0.25s ease, color 0.3s ease, text-shadow 0.3s ease;
+  display: inline-block;
+}
+
+nav ul li a:hover {
+  color: #00aeef;
+  text-shadow: 0 0 10px #00aeef;
+  transform: scale(1.15);
+}
+
+nav ul li a.active {
+  color: #00aeef;
+  text-shadow: 0 0 10px #00aeef;
+}
+
+/* ===== Services Intro Section ===== */
+.services-intro {
+  max-width: 900px;
+  margin: 80px auto;
+  padding: 40px;
+  text-align: center;
+  background: rgba(11, 26, 46, 0.6);
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(0, 174, 239, 0.15);
+  transition: 0.3s ease;
+}
+
+.services-intro:hover {
+  box-shadow: 0 0 35px rgba(0, 174, 239, 0.25);
+}
+
+.services-intro h2 {
+  color: #00aeef;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.services-intro p {
+  color: #cfd8dc;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+/* ===== Services Grid Section ===== */
+.services-grid {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.service-card {
+  background: rgba(7, 20, 39, 0.7);
+  border-radius: 12px;
+  padding: 35px 25px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 174, 239, 0.15);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 30px rgba(0, 174, 239, 0.4);
+}
+
+.service-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0,174,239,0.08) 0%, transparent 70%);
+  transform: rotate(25deg);
+  z-index: 0;
+}
+
+.service-card h3 {
+  color: #00aeef;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  position: relative;
+  z-index: 1;
+}
+
+.service-card p {
+  color: #cfd8dc;
+  font-size: 1rem;
+  line-height: 1.8;
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== Service Icons ===== */
+.service-card .icon {
+  font-size: 2.5rem;
+  color: #00aeef;
+  margin-bottom: 15px;
+  text-shadow: 0 0 15px rgba(0, 174, 239, 0.6);
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.service-card:hover .icon {
+  transform: scale(1.15);
+  text-shadow: 0 0 25px rgba(0, 174, 239, 0.8);
+}
+
+/* ===== Hire Me Section ===== */
+.hire-me {
+  max-width: 850px;
+  margin: 80px auto;
+  padding: 50px 40px;
+  text-align: center;
+  background: linear-gradient(145deg, rgba(7, 20, 39, 0.9), rgba(11, 26, 46, 0.8));
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(0, 174, 239, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.hire-me::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 15px;
+  padding: 2px;
+  background: linear-gradient(135deg, #00aeef, #0072ff, #00aeef);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: destination-out;
+  animation: borderGlow 6s linear infinite;
+}
+
+.hire-me h2 {
+  color: #00aeef;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  position: relative;
+  z-index: 1;
+}
+
+.hire-me p {
+  color: #cfd8dc;
+  font-size: 1rem;
+  margin-bottom: 25px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== Hire Me Button ===== */
+.btn.hire {
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-weight: 500;
+  background: #00aeef;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(0, 174, 239, 0.4);
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.btn.hire:hover {
+  background: transparent;
+  color: #00aeef;
+  border: 2px solid #00aeef;
+  transform: scale(1.08);
+  box-shadow: 0 0 20px rgba(0, 174, 239, 0.6);
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 30px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: #06172c;
+  color: #b0bec5;
+  font-size: 0.9rem;
+}
+
+.social-links a {
+  color: #00aeef;
+  margin: 0 10px;
+  text-decoration: none;
+  transition: 0.8s ease;
+}
+
+.social-links a:hover {
+  text-shadow: 0 0 10px #00aeef;
+}
+
+/* ===== Animations ===== */
+@keyframes borderGlow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 992px) {
+  header {
+    padding: 15px 40px;
+  }
+
+  nav ul {
+    gap: 20px;
+  }
+
+  .services-grid {
+    padding: 30px 20px;
+  }
+
+  .hire-me {
+    padding: 40px 25px;
+  }
+}
+
+@media (max-width: 600px) {
+  nav ul {
+    display: none;
+  }
+
+  .service-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .hire-me h2 {
+    font-size: 1.5rem;
+  }
+}

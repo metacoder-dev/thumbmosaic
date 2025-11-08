@@ -1,0 +1,414 @@
+/* ===== Google Font ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* ===== Reset & Base ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #071427, #0e1f33);
+  color: #ffffff;
+  line-height: 1.7;
+  overflow-x: hidden;
+  padding-top: 100px;
+}
+
+/* ===== Header / Navbar (Same as Thumbnails Page) ===== */
+header {
+  width: 100%;
+  padding: 20px 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background: rgba(11, 26, 46, 0.8);
+  backdrop-filter: blur(6px);
+}
+
+#logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: linear-gradient(135deg, #00aeef, #0072ff);
+  padding: 8px 18px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 174, 239, 0.4);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+#logo:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 25px rgba(0, 174, 239, 0.7);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #b0bec5;
+  font-weight: 500;
+  transition: transform 0.25s ease, color 0.3s ease, text-shadow 0.3s ease;
+  display: inline-block;
+}
+
+nav ul li a:hover {
+  color: #00aeef;
+  text-shadow: 0 0 10px #00aeef;
+  transform: scale(1.15);
+}
+
+nav ul li a.active {
+  color: #00aeef;
+  text-shadow: 0 0 10px #00aeef;
+}
+
+/* ===== Channel Intro Section ===== */
+.channel-intro {
+  max-width: 1000px;
+  margin: 80px auto;
+  padding: 40px;
+  text-align: center;
+  background: rgba(11, 26, 46, 0.6);
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(0, 174, 239, 0.1);
+  transition: 0.3s ease;
+}
+
+.channel-intro:hover {
+  box-shadow: 0 0 35px rgba(0, 174, 239, 0.25);
+}
+
+.channel-intro h2 {
+  color: #00aeef;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.channel-intro p {
+  color: #cfd8dc;
+  margin-bottom: 30px;
+  font-size: 1rem;
+  text-align: justify;
+  line-height: 1.8;
+}
+
+/* ===== Responsive YouTube Video Embed ===== */
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(0, 174, 239, 0.3);
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 12px;
+}
+
+/* ===== Milestone Section ===== */
+.milestone {
+  max-width: 1000px;
+  margin: 70px auto;
+  padding: 50px 40px;
+  text-align: center;
+  background: linear-gradient(145deg, rgba(7, 20, 39, 0.9), rgba(11, 26, 46, 0.8));
+  border-radius: 15px;
+  position: relative;
+  box-shadow: 0 0 25px rgba(0, 174, 239, 0.15);
+  overflow: hidden;
+  animation: glowPulse 4s infinite ease-in-out;
+}
+
+/* Animated glowing border */
+.milestone::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 15px;
+  padding: 2px;
+  background: linear-gradient(135deg, #00aeef, #0072ff, #00aeef);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: destination-out;
+  animation: borderFlow 6s linear infinite;
+}
+
+/* Title */
+.milestone h2 {
+  color: #00aeef;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-shadow: 0 0 15px rgba(0, 174, 239, 0.6);
+}
+
+/* Description */
+.milestone p {
+  color: #cfd8dc;
+  font-size: 1rem;
+  margin-bottom: 30px;
+  line-height: 1.8;
+  padding: 0 10px;
+}
+
+/* Embedded Video */
+.milestone-video {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(0, 174, 239, 0.3);
+}
+
+.milestone-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 12px;
+}
+
+/* ===== Animations ===== */
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 25px rgba(0, 174, 239, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 45px rgba(0, 174, 239, 0.4);
+  }
+}
+
+@keyframes borderFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .milestone {
+    padding: 35px 25px;
+  }
+  .milestone h2 {
+    font-size: 1.6rem;
+  }
+  .milestone p {
+    font-size: 0.95rem;
+  }
+}
+
+/* ===== Channel Stats Section ===== */
+.channel-stats {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 40px;
+  text-align: center;
+  background: rgba(11, 26, 46, 0.6);
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(0, 174, 239, 0.1);
+  transition: 0.3s ease;
+}
+
+.channel-stats:hover {
+  box-shadow: 0 0 35px rgba(0, 174, 239, 0.25);
+}
+
+.channel-stats h2 {
+  color: #00aeef;
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+}
+
+.stats-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.stat-box {
+  background: rgba(7, 20, 39, 0.7);
+  padding: 25px 40px;
+  border-radius: 12px;
+  min-width: 220px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(0, 174, 239, 0.1);
+}
+
+.stat-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 25px rgba(0, 174, 239, 0.5);
+}
+
+.stat-box h3 {
+  color: #00aeef;
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.stat-box p {
+  color: #cfd8dc;
+  font-size: 1rem;
+}
+
+/* ===== Channel Action Buttons Section ===== */
+.channel-actions {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 40px;
+  text-align: center;
+  background: rgba(11, 26, 46, 0.6);
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(0, 174, 239, 0.1);
+}
+
+.channel-actions h2 {
+  color: #00aeef;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.channel-actions p {
+  color: #cfd8dc;
+  margin-bottom: 25px;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+/* ===== Buttons ===== */
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn.visit {
+  background: transparent;
+  color: #00aeef;
+  border: 2px solid #00aeef;
+  box-shadow: 0 0 10px rgba(0, 174, 239, 0.4);
+}
+
+.btn.visit:hover {
+  background: #00aeef;
+  color: #fff;
+  transform: scale(1.08);
+  box-shadow: 0 0 20px rgba(0, 174, 239, 0.7);
+}
+
+.btn.subscribe {
+  background: #00aeef;
+  color: #fff;
+  border: none;
+  box-shadow: 0 0 10px rgba(0, 174, 239, 0.4);
+}
+
+.btn.subscribe:hover {
+  background: transparent;
+  color: #00aeef;
+  border: 2px solid #00aeef;
+  transform: scale(1.08);
+  box-shadow: 0 0 20px rgba(0, 174, 239, 0.7);
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 30px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: #06172c;
+  color: #b0bec5;
+  font-size: 0.9rem;
+}
+
+.social-links a {
+  color: #00aeef;
+  margin: 0 10px;
+  text-decoration: none;
+  transition: 0.8s ease;
+}
+
+.social-links a:hover {
+  text-shadow: 0 0 10px #00aeef;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 992px) {
+  header {
+    padding: 15px 40px;
+  }
+
+  nav ul {
+    gap: 20px;
+  }
+
+  .stats-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .button-group {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .btn {
+    width: 80%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  nav ul {
+    display: none;
+  }
+
+  .channel-intro, .channel-stats, .channel-actions {
+    padding: 25px 20px;
+  }
+
+  .stat-box h3 {
+    font-size: 1.6rem;
+  }
+
+  .channel-actions h2 {
+    font-size: 1.5rem;
+  }
+}

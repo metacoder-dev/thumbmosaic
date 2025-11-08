@@ -1,0 +1,234 @@
+/* ===== Google Font ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* ===== Reset & Base ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #071427, #0e1f33);
+  color: #ffffff;
+  line-height: 1.7;
+  overflow-x: hidden;
+  padding-top: 100px;
+}
+
+/* ===== Header / Navbar ===== */
+header {
+  width: 100%;
+  padding: 20px 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background: rgba(11, 26, 46, 0.8);
+  backdrop-filter: blur(6px);
+}
+
+#logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: linear-gradient(135deg, #00aeef, #0072ff);
+  padding: 8px 18px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 174, 239, 0.4);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+#logo:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 25px rgba(0, 174, 239, 0.7);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #b0bec5;
+  font-weight: 500;
+  transition: transform 0.25s ease, color 0.3s ease, text-shadow 0.3s ease;
+  display: inline-block;
+}
+
+nav ul li a:hover {
+  color: #00aeef;
+  text-shadow: 0 0 10px #00aeef;
+  transform: scale(1.15);
+}
+
+nav ul li a.active {
+  color: #00aeef;
+  text-shadow: 0 0 10px #00aeef;
+}
+
+/* ===== Thumbnails Gallery Section ===== */
+.thumbnails-gallery {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 40px;
+  text-align: center;
+}
+
+.thumbnails-gallery h2 {
+  color: #00aeef;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.thumbnails-gallery p {
+  color: #cfd8dc;
+  margin-bottom: 40px;
+  font-size: 1rem;
+}
+
+/* ===== Gallery Grid ===== */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.thumb {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 174, 239, 0.15);
+  transition: 0.4s ease;
+}
+
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.thumb:hover img {
+  transform: scale(1.08);
+  box-shadow: 0 0 30px rgba(0, 174, 239, 0.5);
+}
+
+/* ===== Lightbox ===== */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 200;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(7, 20, 39, 0.9);
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease;
+}
+
+.lightbox-content {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 15px;
+  box-shadow: 0 0 30px rgba(0, 174, 239, 0.6);
+  animation: zoomIn 0.3s ease;
+}
+
+.close {
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  font-size: 40px;
+  color: #00aeef;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.close:hover {
+  color: #ffffff;
+  text-shadow: 0 0 15px #00aeef;
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 30px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: #06172c;
+  color: #b0bec5;
+  font-size: 0.9rem;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 992px) {
+  header {
+    padding: 15px 40px;
+  }
+
+  nav ul {
+    gap: 20px;
+  }
+
+  .thumbnails-gallery {
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  nav ul {
+    display: none;
+  }
+
+  .thumbnails-gallery h2 {
+    font-size: 1.6rem;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 30px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: #06172c;
+  color: #b0bec5;
+  font-size: 0.9rem;
+}
+
+.social-links a {
+  color: #00aeef;
+  margin: 0 10px;
+  text-decoration: none;
+  transition: 0.8s ease;
+}
+
+.social-links a:hover {
+  text-shadow: 0 0 10px #00aeef;
+}

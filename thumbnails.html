@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thumbnails</title>
+  <link rel="stylesheet" href="thumbnails.css">
+
+  <!-- Link of Icons -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <!-- Header / Navbar -->
+  <header>
+    <h1 id="logo">ThumbMosaic</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Intro</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="thumbnails.html" class="active">Thumbnails</a></li>
+        <li><a href="ytchannel.html">YT Channel</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Thumbnails Section -->
+  <section class="thumbnails-gallery">
+    <h2>My YouTube Thumbnails</h2>
+    <p>Here’s a collection of some of my favorite YouTube thumbnail designs created for various clients and projects.</p>
+
+    <div class="gallery">
+      <!-- Example Thumbnails -->
+      <div class="thumb">
+        <img src="img/thumbnails/th1.jpg" alt="Thumbnail Design 1">
+      </div>
+      <div class="thumb">
+        <img src="img/thumbnails/th2.jpg" alt="Thumbnail Design 2">
+      </div>
+      <div class="thumb">
+        <img src="img/thumbnails/th3.jpg" alt="Thumbnail Design 3">
+      </div>
+      <div class="thumb">
+        <img src="img/thumbnails/th4.jpg" alt="Thumbnail Design 4">
+      </div>
+      <div class="thumb">
+        <img src="img/thumbnails/th5.png" alt="Thumbnail Design 5">
+      </div>
+      <div class="thumb">
+        <img src="img/thumbnails/th6.png" alt="Thumbnail Design 6">
+      </div>
+      <div class="thumb">
+        <img src="img/thumbnails/th7.png" alt="Thumbnail Design 7">
+      </div>
+            <div class="thumb">
+        <img src="img/thumbnails/th8.png" alt="Thumbnail Design 8">
+      </div>
+            <div class="thumb">
+        <img src="img/thumbnails/th9.png" alt="Thumbnail Design 9">
+      </div>
+            <div class="thumb">
+        <img src="img/thumbnails/th10.png" alt="Thumbnail Design 10">
+      </div>
+            <div class="thumb">
+        <img src="img/thumbnails/th11.png" alt="Thumbnail Design 11">
+      </div>
+      <div class="thumb">
+        <img src="img/thumbnails/th12.png" alt="Thumbnail Design 12">
+      </div>
+      <div class="thumb">
+        <img src="img/thumbnails/th13.jpg" alt="Thumbnail Design 13">
+      </div>
+      <div class="thumb">
+        <img src="img/thumbnails/th14.jpeg" alt="Thumbnail Design 14">
+      </div>
+      <div class="thumb">
+        <img src="img/thumbnails/th15.png" alt="Thumbnail Design 15">
+      </div>
+      <div class="thumb">
+        <img src="img/thumbnails/th16.png" alt="Thumbnail Design 16">
+      </div>
+      <div class="thumb">
+        <img src="img/thumbnails/th17.png" alt="Thumbnail Design 17">
+      </div>
+      <div class="thumb">
+        <img src="img/thumbnails/th18.png" alt="Thumbnail Design 18">
+      </div>
+      <div class="thumb">
+        <img src="img/thumbnails/th19.png" alt="Thumbnail Design 19">
+      </div>
+      <div class="thumb">
+        <img src="img/thumbnails/th20.jpg" alt="Thumbnail Design 20">
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox for Enlarged Preview -->
+  <div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img" src="">
+  </div>
+
+    <!-- ===== Footer ===== -->
+    <footer>
+        <h4>&copy; 2025 ThumbMosaic</h4><p>All Rights Reserved.</p>
+        <div class="social-links">
+            <a href="https://www.instagram.com/@wahabx2.7" target="_blank"><i class="fa-brands fa-instagram"></i></a> |
+            <a href="https://www.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin"></i></a> |
+            <a href="https://youtube.com/@wahabx2.7?si=OBVRjcfXYOqeCUdV" target="_blank"><i class="fa-brands fa-youtube"></i></a> |
+            <a href="https://www.tiktok.com/wahabxwahab" target="_blank"><i class="fa-brands fa-tiktok"></i></a> |
+            <a href="https://www.facebook.com/wahabxthegamechanger" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+        </div>
+    </footer>
+
+
+  <!-- Script for Lightbox & Logo -->
+  <script>
+    // Logo click: go back to homepage
+    document.getElementById("logo").addEventListener("click", function() {
+      location.href = "index.html";
+    });
+
+    // Lightbox Functionality
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const close = document.querySelector(".close");
+
+    document.querySelectorAll(".gallery img").forEach(img => {
+      img.addEventListener("click", () => {
+        lightbox.style.display = "flex";
+        lightboxImg.src = img.src;
+      });
+    });
+
+    close.addEventListener("click", () => {
+      lightbox.style.display = "none";
+    });
+
+    lightbox.addEventListener("click", (e) => {
+      if (e.target !== lightboxImg) {
+        lightbox.style.display = "none";
+      }
+    });
+  </script>
+</body>
+</html>
